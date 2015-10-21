@@ -1,10 +1,10 @@
 web:
-  image: tutum/quickstart-go
+  image: tenxcloud/quickstart-go
   links:
-    - "mongo:mongo"
+    - "mongo"
   ports:
     - "80"
 mongo:
-  image: tutum/mongodb
+  image: tenxcloud/mongodb
   environment:
     - AUTH=no
