@@ -5,13 +5,12 @@ import (
 	"net/http"
 	"os"
 	"time"
-
 	"gopkg.in/mgo.v2"
 )
 
 func mongoConnect() (s string) {
 
-	session, err := mgo.Dial("mongo")
+	session, err := mgo.Dial(os.Getenv("MONGO_PORT_27017_TCP_ADDR"))
 	if err == nil {
 		defer session.Close()
 		s = "connected"
